@@ -1,23 +1,32 @@
 <?php
+/**
+ * Le routeur est chargé d'écouter les 
+ * requêtes HTTP provenant du client web 
+ * puis d'y répondre avec le contenu approprié.
+ */
+$path = $_SERVER['REQUEST_URI'];
 
+$cleanPath = preg_replace('/\?.*/', '', $path);
 
-switch ($_SERVER["REQUEST_URI"]) {
-    case "/":
-        echo "Home";
+switch ($cleanPath) {
+    case '/':
+        echo "Page d'accueil";
         break;
-    case "/about":
-        echo "About";
+    // Filter à partir de la fin de l'URL
+    case '/about':
+        echo "Page de présentation";
         break;
-    case "/contact":
-        echo "Contact";
+    case '/skills':
+        include './templates/skills.php';
         break;
-    case "/projects":
-        echo "Projects";
+    case '/projects':
+        include './templates/projects.php';
         break;
-    case "/skills":
-        echo "Skills";
+    case '/contact':
+        include './templates/contact.php';
         break;
+    
     default:
-        echo "Page 404, introuvable";
+        echo 'Page introuvable - 404 ';
         break;
 }
