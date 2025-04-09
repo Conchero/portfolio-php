@@ -1,8 +1,10 @@
 <?php
- $firstName = htmlspecialchars($_POST["first-name__input"] );
- $lastName = htmlspecialchars($_POST["last-name__input"] );
-
- var_dump($firstName);
+//  $firstName = htmlspecialchars($_POST["firstname"] );
+//  $lastName = htmlspecialchars($_POST["lastname"] );
+if ($_SERVER["REQUEST_METHOD"] === "POST")
+{
+    var_dump($_POST);
+}
 ?>
 
 
