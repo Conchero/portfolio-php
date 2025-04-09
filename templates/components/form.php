@@ -3,7 +3,7 @@ Mail(r) / Telephone
 Objet (Autre, formation, collaboration, Devis,)
 Message -->
 <div class="m-4 shadow-sm">
-    <form action="" method="post" class="flex flex-col gap-3">
+    <form action="./templates/contact.php" method="post" class="flex flex-col gap-3">
         <!-- Objets -->
         <div class="border border-slate-200 rounded-lg px-4 py-2 focus:border-slate-400 focus:shadow-md focus:outline-none">
             <select name="object" id="object" class="bg-transparent text-slate-800 w-full">
